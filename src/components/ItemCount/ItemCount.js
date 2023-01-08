@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from 'react-bootstrap';
 
-const ItemCount = ({maxStock}) => {
+const ItemCount = ({stock}) => {
 
     const [count, setCount] = useState (1)
 
@@ -16,7 +16,7 @@ const ItemCount = ({maxStock}) => {
         <>
             <Button onClick={restCount} disabled={count == 1}>-</Button>
             <p>{count}</p>
-            <Button onClick={addCount} disabled={count == maxStock}>+</Button>
+            <Button onClick={addCount} disabled={count == stock}>+</Button>
         </>
     )
 }
