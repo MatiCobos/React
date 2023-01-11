@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ItemCount from "../ItemCount/ItemCount";
 import './Item.css'
+import { Link } from "react-router-dom";
 
 const Item = ({id, price, title, pictureURL, stock, before}) =>{
     return (
@@ -12,8 +13,10 @@ const Item = ({id, price, title, pictureURL, stock, before}) =>{
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text><spam className="tachado">${before}</spam> <spam style={{color: "red"}}> ${price} </spam></Card.Text>
-                {/* <Button variant="primary">Go somewhere</Button> */}
-                <ItemCount initialStock={1} stock={stock}/>
+                    <Link to={`/item/${id}`}>
+                        See more
+                    </Link>
+                
             </Card.Body>
         </Card>
         

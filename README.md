@@ -15,3 +15,7 @@ Libreria y estilos de la página.
 ### `npm i bootstrap-icons`
 
 Usamos los icons que nos provee Bootstrap.
+
+### `npm i react-router-dom`
+
+Hacemos el ruteo por la web.
