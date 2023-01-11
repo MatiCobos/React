@@ -6,6 +6,10 @@ Matias Cobos.
 
 Este es un e-commerce dedicado a la venta de ropa del club Fullham FC de la Premier League Inglesa.
 
+# Gif de navegacion
+
+![image](https://github.com/MatiCobos/React/blob/master/media/NavigationGif.gif)
+
 # Dependencias
 
 ### `npm install react-bootstrap bootstrap`
@@ -18,4 +22,4 @@ Usamos los icons que nos provee Bootstrap.
 
 ### `npm i react-router-dom`
 
-Hacemos el ruteo por la web.
+Ruteo por la web.
