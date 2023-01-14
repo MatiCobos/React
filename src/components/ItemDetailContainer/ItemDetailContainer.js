@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
   
     useEffect (()=>{
 
-            let products = [
+        let products = [
             {id: 1, title: "Home Shirt", before: 70, price: 60, pictureURL: "/homeShirt.jpg", stock: 5, text: "To celebrate being EFL Champions be a part of this momentous occasion with a limited edition Champions 21/22 Fulham FC", productCode: "ADT-697087", category: "shirt" },
             {id: 2, title: "Away Shirt", before: 70, price: 60, pictureURL: "/awayShirt.jpg", stock: 6, text:"To celebrate being EFL Champions be a part of this momentous occasion with a limited edition Champions 21/22 Fulham FC", productCode: "VSD-55607", category: "shirt" },
             {id: 3, title: "Jacket", before: 200, price: 150, pictureURL: "/jacket.jpg", stock: 7, text: "Condivo Light Padded Jacket", productCode: "TYG-5938496", category: "jacket" },
@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
                 resolve(products)
             }, 2000)
         }).then(res => {
-            const item = res.find((item) => item.id ===  Number(itemId))
+            const item = res.find((item) => item.id === Number(itemId))
             setProductDetail(item)
             setLoading(false)
         })
@@ -33,10 +33,11 @@ const ItemDetailContainer = () => {
   
     return (
         <>
-        {loading?
-        <h1>Loading...</h1>
-        :
-            <ItemDetail {...productDetail}/>
+            {
+                loading?
+                <h1>Loading...</h1>
+                :
+                <ItemDetail {...productDetail}/>
             }
         </>
   )
