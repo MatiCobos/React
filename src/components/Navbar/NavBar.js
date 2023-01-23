@@ -1,8 +1,12 @@
 import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap'
 import CartWidget from './CartWidget/CartWidget.js'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import {cartContext} from '../CartContext/CartContext'
 
 const NavBar = () => {
+
+    const {totalQuantity} = useContext(cartContext)
 
     return(
         <Navbar bg="light" expand="lg">
@@ -19,7 +23,7 @@ const NavBar = () => {
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
-                <CartWidget />
+                <CartWidget totalQuantity={totalQuantity} />
             </Container>
         </Navbar>
     )

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemList from "../ItemList/ItemList"
+import '../ItemListContainer/ItemListContainer.css'
+import Spinner from 'react-bootstrap/Spinner';
 
 
 const ItemListContainer = ({title}) => {
-
+    
     const [productList, setProductList] = useState ([])
     const [loading, setLoading] = useState (true)
     const {categoryId} = useParams()
@@ -36,12 +38,16 @@ const ItemListContainer = ({title}) => {
 
     return(
         <>
-        {
-            loading?
-                <h1>Loading products...</h1>
-            :
-            <ItemList  productList={productList}/>
-        }
+            {
+                
+                loading?
+                    <Spinner animation="border" role="status" />
+                :
+                <>
+                    <h1>{title}</h1>
+                    <ItemList  productList={productList}/>
+                </>
+            }
         </>
     )
 }

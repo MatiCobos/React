@@ -1,12 +1,15 @@
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './CartWidget.css';
+import { Link } from 'react-router-dom';
 
-const CartWidget = () => {
+const CartWidget = ({totalQuantity}) => {
     
     return (
         <>
+        <Link to={"cart"}>
             <i className="bi bi-cart3" ></i>
-            0
+            {totalQuantity}
+        </Link>
         </>
     )
 }

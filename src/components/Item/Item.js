@@ -12,7 +12,7 @@ const Item = ({id, price, title, pictureURL, stock, before}) =>{
             <Card.Img variant="top" src={pictureURL} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
-                <Card.Text><spam className="tachado">${before}</spam> <spam style={{color: "red"}}> ${price} </spam></Card.Text>
+                <Card.Text>{/* <spam className="tachado">${before}</spam>  */}{/* <spam style={{color: "red"}}> */} ${price} {/* </spam> */}</Card.Text>
                     <Link to={`/item/${id}`}>
                         See more
                     </Link>

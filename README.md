@@ -20,6 +20,14 @@ Libreria y estilos de la página.
 
 Usamos los icons que nos provee Bootstrap.
 
+### `npm install --save react-toastify`
+
+Libreria para notificaciones
+
+### `npm i mdb-react-ui-kit`
+
+Libreria para crear el footer
+
 ### `npm i react-router-dom`
 
 Ruteo por la web.
