@@ -31,3 +31,7 @@ Libreria para crear el footer
 ### `npm i react-router-dom`
 
 Ruteo por la web.
+
+## `npm install firebase`
+
+BackEnd de nuestra app
