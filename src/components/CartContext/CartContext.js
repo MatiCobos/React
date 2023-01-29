@@ -42,12 +42,22 @@ const CartContext = ({ children }) => {
     return accu
   }
 
+  const getTotal = () => {
+    let total = 0
+
+    cart.forEach(prod => {
+      total += prod.quantity * prod.price
+    })
+    return total
+  }
+
   const totalQuantity = getTotalQuantity()
   console.log(totalQuantity);
 
+  const total = getTotal()
   return (
     <div>
-      <cartContext.Provider value={{ addItem, isInCart, clear, totalQuantity, cart /*list*/ }} >
+      <cartContext.Provider value={{ addItem, isInCart, clear, totalQuantity, cart, total /*list*/ }} >
         {children}
       </cartContext.Provider></div>
   )
