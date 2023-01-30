@@ -13,6 +13,10 @@ const ItemListContainer = ({title}) => {
     const [loading, setLoading] = useState (true)
     const {categoryId} = useParams()
 
+        useEffect(() => {
+        document.title = 'Home'
+    }, [])
+
     useEffect (()=>{
 
         const collectionRef = categoryId? 

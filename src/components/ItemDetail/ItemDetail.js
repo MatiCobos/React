@@ -1,4 +1,4 @@
-import { React, useContext, useState } from "react";
+import { React, useContext, useEffect, useState } from "react";
 import { Card, ListGroup } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
@@ -11,6 +11,10 @@ const ItemDetail = ({id, title, text, price, stock, productCode, pictureURL}) =>
 
 const [quantity, setQuantity] = useState (0)
 const {addItem, isInCart} = useContext(cartContext)
+
+    useEffect(() => {
+        document.title = `Detail ${title}`
+    }, [])
 
 const onAdd = (quantity) => {
     addItem({id, title, price, quantity})

@@ -1,23 +1,28 @@
 import { collection, query, where, documentId, getDocs, writeBatch, addDoc } from 'firebase/firestore'
 import React from 'react'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { cartContext } from '../CartContext/CartContext'
 import { db } from '../../service/firebase/firebaseConfig'
 import { useNavigate } from 'react-router-dom'
+import Formulario from '../Formulario/Formulario'
 
 const Checkout = () => {
+
+    useEffect(() => {
+        document.title = `Checkout`
+    }, [])
 
     const {cart, total, clear} = useContext(cartContext)
 
     const navigate = useNavigate()
 
-    const createOrder = async () => {
+    const createOrder = async (name, phone, email) => {
 
         const objOrder = {
             buyer: {
-                name: "matias",
-                phone: "12345678",
-                email: "matias@hotmail.com"
+                name,
+                phone,
+                email,
             },
             items: cart,
             total
@@ -76,9 +81,7 @@ const Checkout = () => {
 
   return (
     <>
-        <h1>Checkout</h1>
-        <p></p>
-        <button onClick={createOrder}>Generar Orden</button>
+        <Formulario createOrder={createOrder} />        
     </> 
   )
 }
