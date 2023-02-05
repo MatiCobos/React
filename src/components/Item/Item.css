@@ -1,0 +1,13 @@
+.card:hover {
+    box-shadow: 5px 10px 20px 1px rgb(8, 8, 8) !important;
+    transition: all 0.5s linear;
+}
+
+.card {
+    border: solid rgba(230, 217, 217, 0.856) 1px;
+}
+
+
+.card-body {
+    text-align: center;
+}

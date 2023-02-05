@@ -3,6 +3,7 @@ import CartWidget from './CartWidget/CartWidget.js'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import {cartContext} from '../CartContext/CartContext'
+import '../Navbar/NavBar.css'
 
 const NavBar = () => {
 
@@ -11,16 +12,20 @@ const NavBar = () => {
     return(
         <Navbar bg="light" expand="lg">
             <Container>
-                <Link to={'/'} href="#home">Matias Cobos</Link>
+                                    <Navbar.Brand >
+                        <Link to={'/'}>
+                            <div className='containerLogo'>
+                                <img src='/logo.png' alt="appLogo" />
+                            </div>
+                        </Link>
+                    </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <NavDropdown title="Category" id="basic-nav-dropdown">
-                            <Nav.Link><Link to={"category/polo"}>Polo</Link></Nav.Link>
-                            <Nav.Link><Link to={"category/jacket"}>Jacket</Link></Nav.Link>
-                            <Nav.Link><Link to={"category/pants"}>Pants</Link></Nav.Link>
-                            <Nav.Link><Link to={"category/shirt"}>Shirt</Link></Nav.Link>
-                        </NavDropdown>
+                        <Nav.Link><Link to={"category/polo"}>Polo</Link></Nav.Link>
+                        <Nav.Link><Link to={"category/jacket"}>Jacket</Link></Nav.Link>
+                        <Nav.Link><Link to={"category/pants"}>Pants</Link></Nav.Link>
+                        <Nav.Link><Link to={"category/shirt"}>Shirt</Link></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
                 <CartWidget totalQuantity={totalQuantity} />

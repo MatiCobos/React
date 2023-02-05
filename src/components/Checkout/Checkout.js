@@ -5,6 +5,7 @@ import { cartContext } from '../CartContext/CartContext'
 import { db } from '../../service/firebase/firebaseConfig'
 import { useNavigate } from 'react-router-dom'
 import Formulario from '../Formulario/Formulario'
+import '../Checkout/Checkout.css'
 
 const Checkout = () => {
 
@@ -81,7 +82,10 @@ const Checkout = () => {
 
   return (
     <>
-        <Formulario createOrder={createOrder} />        
+    <div className='formContainer'>
+        <h1>Form Checkout</h1>
+        <Formulario createOrder={createOrder} />
+    </div>      
     </> 
   )
 }

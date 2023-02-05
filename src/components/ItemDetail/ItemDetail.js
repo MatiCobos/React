@@ -1,5 +1,5 @@
 import { React, useContext, useEffect, useState } from "react";
-import { Card, ListGroup } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css'
@@ -16,45 +16,65 @@ const {addItem, isInCart} = useContext(cartContext)
         document.title = `Detail ${title}`
     }, [])
 
-const onAdd = (quantity) => {
-    addItem({id, title, price, quantity})
-    setQuantity(parseInt(quantity))
+    const onAdd = (quantity) => {
+        addItem({id, title, price, quantity})
+        setQuantity(parseInt(quantity))
+        console.log("hice clicks");
 
-    toast.success(`Agregaste ${quantity} ${title}`, {
-        position: "bottom-right",
-        autoClose: 1500,
-    })
-}
+        toast.success(`Agregaste ${quantity} ${title}`, {
+            position: "bottom-right",
+            autoClose: 1500,
+        })
+    }
 
-  return (  
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={pictureURL} />
-            <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>{text}</Card.Text>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-                <ListGroup.Item>${price}</ListGroup.Item>
-                <ListGroup.Item>Stock: {stock}</ListGroup.Item>
-                <ListGroup.Item><u>Produc Code:</u> {productCode}</ListGroup.Item>
+    if(stock == 0){
+        return(
+            <div className="container">
+                <div className="imgContainer">
+                    <img src={pictureURL} alt="producto"></img>
+                </div>
+
+                <div className="text">
+                    <h3>{title}</h3>
+                    <hr />
+                    <p>{text}</p>
+                    <p>Price: ${price}</p>
+                    <p style={{color: "red"}}><i class="bi bi-exclamation-octagon" style={{color: 'red'}} /> We do not    
+                    have stock of this product</p>
+                    <p>Product code: {id}</p>
+                    <hr />
+                </div>
+            </div>
+        )
+    }
+
+    return (  
+        <div className="container">
+            <div className="imgContainer">
+                <img src={pictureURL} alt="producto"></img>
+            </div>
+
+            <div className="text">
+                <h3>{title}</h3>
+                <hr />
+                <p>{text}</p>
+                <p>Price: ${price}</p>
+                <p style={{color: "green"}}><i class="bi bi-check-lg" style={{color: 'green'}} />Available 
+                stock: {stock}</p>
+                <p>Product code: {id}</p>
+                <hr />
                 
                 {
-                    quantity > 0 ? 
-                    <Link to={"/cart"}> Checkout </Link>
+                    quantity > 0 ?
+                        <Link to={"/checkout"}> <Button>Checkout</Button> </Link>
                     :
                     <>
                         <ItemCount initialStock={1} stock={stock} onAdd={onAdd}/> 
                     </>
+
                 }
-                    
-            </ListGroup>
-            <Card.Body>
-                
-            </Card.Body>
-            <ToastContainer />
-        </Card>
-            
-         
+            </div>
+        </div>         
     )
 }
 

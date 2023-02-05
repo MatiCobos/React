@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.imgContainer img {
+    height: 80vh;
+}
+
+.text {
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    display: flex;
+    margin: 20px 0px 0px 0px;
+}
+
+
+.bottonContainer {
+    display: flex;
+}

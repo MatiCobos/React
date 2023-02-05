@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from 'react-bootstrap';
+import './ItemCount.css';
 
 const ItemCount = ({stock, onAdd}) => {
 
@@ -16,7 +17,7 @@ const ItemCount = ({stock, onAdd}) => {
     return(
         <>
             <Button onClick={restCount} disabled={count == 1}>-</Button>
-            <p>{count}</p>
+            {count}
             <Button onClick={addCount} disabled={count == stock}>+</Button>
             <Button onClick={() => onAdd(count)}>Add to cart</Button>  
         </>

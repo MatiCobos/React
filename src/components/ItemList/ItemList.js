@@ -7,7 +7,6 @@ const ItemList = ({productList}) => {
     return(
         <Container>
             <Row>
-                
                 {
                     productList.map ((item)=>{
                         return(

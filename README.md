@@ -4,34 +4,35 @@ Matias Cobos.
 
 # E-Commerce
 
-Este es un e-commerce dedicado a la venta de ropa del club Fullham FC de la Premier League Inglesa.
+This is an e-commerce dedicated to the sale of clothes from the Fullham FC. Club of the English Premier League.
+
+# Installation
+
+```sh
+$ git clone https://github.com/MatiCobos/React.git
+$ cd React
+$ npm install
+$ npm start
+```
+
+# Environment Variables
+
+See [`.env.example`]() for an example.
+
+## Dependencies
+
+### `npm install react-bootstrap bootstrap`
+
+### `npm i bootstrap-icons`
+
+### `npm install --save react-toastify`
+
+### `npm i mdb-react-ui-kit`
+
+### `npm i react-router-dom`
+
+### `npm install firebase`
 
 # Gif de navegacion
 
 ![image](https://github.com/MatiCobos/React/blob/master/media/NavigationGif.gif)
-
-# Dependencias
-
-### `npm install react-bootstrap bootstrap`
-
-Libreria y estilos de la página.
-
-### `npm i bootstrap-icons`
-
-Usamos los icons que nos provee Bootstrap.
-
-### `npm install --save react-toastify`
-
-Libreria para notificaciones
-
-### `npm i mdb-react-ui-kit`
-
-Libreria para crear el footer
-
-### `npm i react-router-dom`
-
-Ruteo por la web.
-
-## `npm install firebase`
-
-BackEnd de nuestra app

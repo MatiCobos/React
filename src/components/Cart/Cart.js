@@ -1,29 +1,31 @@
 import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { cartContext } from '../CartContext/CartContext'
-import ItemCart from '../ItemCart/ItemCart'
-
+import CartList from '../CartList/CartList'
+import '../Cart/Cart.css'
 const Cart = () => {
-  const {cart, clear, total} = useContext(cartContext)
+  const {cart, clear, total, removeItem} = useContext(cartContext)
 
       useEffect(() => {
         document.title = `Cart`
     }, [])
 
+        if(cart == 0){
+        return(
+          <p>Your bag is empty</p>
+        )
+    }
+
   return (
-    <div>
-      <h1>Cart</h1>
-      
-      {
-        cart.map((item)=>{
-          return(
-            <ItemCart key={item.id} id={item.id} title={item.title} quantity={item.quantity} price={item.price}/>
-          ) 
-        })
-      }      
+    <>
+    <div className='cartContainer'>
+      <h1>Your cart</h1>
+      <CartList cart={cart}/>
+      <p>Total: ${total}</p>         
       <button onClick={clear}>Clear Cart</button>
       <Link to='/checkout'>Checkout</Link>
     </div>
+    </>
   )
   
   

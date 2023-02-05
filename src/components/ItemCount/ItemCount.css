@@ -1,0 +1,30 @@
+.btn-primary {
+    color: black !important;
+    background-color: white !important;
+    border-color: white !important;
+}
+
+.btn-primary:hover {
+    border-color: black!important;
+    background-color: white!important;
+    color: black!important;
+}
+
+.btn-primary:disabled {
+    background-color: yellow!important;
+    color: black!important;
+    border-color: black!important;
+}
+
+.btn-primary:active {
+    background-color: black!important;
+    color: white!important;
+    border-color: black!important;
+}
+
+button:focus:not(:focus-visible) {
+    background-color: white!important;
+    color: black!important;
+    box-shadow: none!important;
+    border-color: black!important;
+}
