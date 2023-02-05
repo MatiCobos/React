@@ -15,19 +15,19 @@ const Footer = () => {
         </div>
 
         <div>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://www.facebook.com/matias.cobos' target={"_blank"} className='me-4 text-reset'>
             <MDBIcon fab icon="facebook-f" />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://twitter.com/Matias_Cobos'  target={"_blank"} className='me-4 text-reset'>
             <MDBIcon fab icon="twitter" />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://www.instagram.com/cobos.matias/' target={"_blank"} className='me-4 text-reset'>
             <MDBIcon fab icon="instagram" />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://www.linkedin.com/in/matias-cobos/' target={"_blank"} className='me-4 text-reset'>
             <MDBIcon fab icon="linkedin" />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://github.com/MatiCobos' target={"_blank"} className='me-4 text-reset'>
             <MDBIcon fab icon="github" />
           </a>
         </div>
@@ -70,10 +70,10 @@ const Footer = () => {
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
-                info@matiascobos.com
+                casla_matias@hotmail.com
               </p>
               <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
+                <MDBIcon icon="phone" className="me-3" /> + 54 1169065721
               </p>
             </MDBCol>
           </MDBRow>
@@ -81,7 +81,7 @@ const Footer = () => {
       </section>
         
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-        © {year} Copyright: Matias Cobos
+        © {year} Copyright: <a href='https://github.com/MatiCobos' target={"_blank"}><MDBIcon fab icon="github" /> Matias Cobos</a> 
       </div>
     </MDBFooter>
   );

@@ -24,11 +24,13 @@ const Cart = () => {
       <h1>Your cart</h1>
       <CartList cart={cart}/>
       <p style={{fontSize: "2rem"}}>Total: ${total}</p> 
-      <hr/>         
-      <Button variant="outline-danger" onClick={clear}>Clear Cart</Button>
-      <Link to='/checkout'>
-        <Button variant="outline-dark">Checkout</Button>
-      </Link>
+      <hr/>
+      <div className='btnContainer'>
+        <Button variant="outline-danger" onClick={clear}>Clear Cart</Button>
+        <Link to='/checkout'>
+          <Button variant="outline-dark">Checkout</Button>
+        </Link>
+      </div>
     </div>
     </>
   )
