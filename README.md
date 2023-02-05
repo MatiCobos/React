@@ -17,7 +17,7 @@ $ npm start
 
 # Environment Variables
 
-See [`.env.example`]() for an example.
+See [`.env.example`](https://github.com/MatiCobos/React/blob/master/.env.example) for an example.
 
 ## Dependencies
 

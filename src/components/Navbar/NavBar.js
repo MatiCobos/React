@@ -1,4 +1,4 @@
-import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap'
+import { Nav, Navbar, Container } from 'react-bootstrap'
 import CartWidget from './CartWidget/CartWidget.js'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
@@ -12,7 +12,7 @@ const NavBar = () => {
     return(
         <Navbar bg="light" expand="lg">
             <Container>
-                                    <Navbar.Brand >
+                    <Navbar.Brand >
                         <Link to={'/'}>
                             <div className='containerLogo'>
                                 <img src='/logo.png' alt="appLogo" />

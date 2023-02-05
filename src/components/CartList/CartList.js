@@ -3,8 +3,6 @@ import ItemCart from '../ItemCart/ItemCart'
 import Table from 'react-bootstrap/Table';
 import '../CartList/CartList.css'
 
-
-
 const CartList = ({cart}) => {
   return(
     <>

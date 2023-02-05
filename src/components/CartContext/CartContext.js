@@ -7,12 +7,10 @@ const CartContext = ({ children }) => {
 
   const [cart, setCart] = useState([])
 
-  const addItem = (/*item, quantity*/productToAdd) => {
-    //agregar cierta cantidad de un item al carrito
-    //setList ([...list, {...item, quantity}])
+  const addItem = (productToAdd) => {
+
     if (!isInCart(productToAdd.id)) {
       setCart(prev => {
-        console.log(prev);
         return [...prev, productToAdd]
       })
     } else {
@@ -27,7 +25,6 @@ const CartContext = ({ children }) => {
   }
 
   const clear = () => {
-    //Remover todos los item
     setCart([])
   }
 
@@ -52,7 +49,6 @@ const CartContext = ({ children }) => {
   }
 
   const totalQuantity = getTotalQuantity()
-  console.log(totalQuantity);
 
   const total = getTotal()
   return (

@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import { cartContext } from '../CartContext/CartContext'
 import CartList from '../CartList/CartList'
 import '../Cart/Cart.css'
+import { Button } from 'react-bootstrap';
+
 const Cart = () => {
-  const {cart, clear, total, removeItem} = useContext(cartContext)
+  const {cart, clear, total} = useContext(cartContext)
 
       useEffect(() => {
         document.title = `Cart`
@@ -21,9 +23,12 @@ const Cart = () => {
     <div className='cartContainer'>
       <h1>Your cart</h1>
       <CartList cart={cart}/>
-      <p>Total: ${total}</p>         
-      <button onClick={clear}>Clear Cart</button>
-      <Link to='/checkout'>Checkout</Link>
+      <p style={{fontSize: "2rem"}}>Total: ${total}</p> 
+      <hr/>         
+      <Button variant="outline-danger" onClick={clear}>Clear Cart</Button>
+      <Link to='/checkout'>
+        <Button variant="outline-dark">Checkout</Button>
+      </Link>
     </div>
     </>
   )

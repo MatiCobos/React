@@ -3,14 +3,14 @@ import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { cartContext } from "../CartContext/CartContext";
 
-const ItemDetail = ({id, title, text, price, stock, productCode, pictureURL}) => {
+const ItemDetail = ({id, title, text, price, stock, pictureURL}) => {
 
 const [quantity, setQuantity] = useState (0)
-const {addItem, isInCart} = useContext(cartContext)
+const {addItem} = useContext(cartContext)
 
     useEffect(() => {
         document.title = `Detail ${title}`
@@ -19,7 +19,6 @@ const {addItem, isInCart} = useContext(cartContext)
     const onAdd = (quantity) => {
         addItem({id, title, price, quantity})
         setQuantity(parseInt(quantity))
-        console.log("hice clicks");
 
         toast.success(`Agregaste ${quantity} ${title}`, {
             position: "bottom-right",
@@ -39,7 +38,7 @@ const {addItem, isInCart} = useContext(cartContext)
                     <hr />
                     <p>{text}</p>
                     <p>Price: ${price}</p>
-                    <p style={{color: "red"}}><i class="bi bi-exclamation-octagon" style={{color: 'red'}} /> We do not    
+                    <p style={{color: "red"}}><i className="bi bi-exclamation-octagon" style={{color: 'red'}} /> We do not    
                     have stock of this product</p>
                     <p>Product code: {id}</p>
                     <hr />
@@ -59,7 +58,7 @@ const {addItem, isInCart} = useContext(cartContext)
                 <hr />
                 <p>{text}</p>
                 <p>Price: ${price}</p>
-                <p style={{color: "green"}}><i class="bi bi-check-lg" style={{color: 'green'}} />Available 
+                <p style={{color: "green"}}><i className="bi bi-check-lg" style={{color: 'green'}} />Available 
                 stock: {stock}</p>
                 <p>Product code: {id}</p>
                 <hr />
